@@ -4,7 +4,9 @@
 
 #ifndef BANKPROJECT_ARRIVAL_H
 #define BANKPROJECT_ARRIVAL_H
-class Arrival {
+#include "Event.h"
+
+class Arrival : public Event{
 public :
     Arrival();
     void traiter();

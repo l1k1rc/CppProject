@@ -4,7 +4,9 @@
 
 #ifndef BANKPROJECT_DepartureURE_H
 #define BANKPROJECT_DepartureURE_H
-class Departure {
+#include "Event.h"
+
+class Departure : public Event {
 public :
     Departure();
     void traiter();
