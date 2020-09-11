@@ -22,12 +22,12 @@ Cashier Bank::getFreeCashier() {
 
 
 int Bank::nbCashier() {
-    return sizeof(cashiers);
+    return (sizeof(cashiers)/sizeof(*cashiers));
 }
 
 int Bank::nbClients() {
 }
 
 std::string Bank::toString(){
-    cout << "Actual number of cashier in the bank is: " << sizeof(Cashier);
+    cout << "Actual number of cashier in the bank is: " << nbCashier() << endl;
 }

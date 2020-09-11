@@ -4,13 +4,13 @@
 
 #ifndef BANKPROJECT_SED_H
 #define BANKPROJECT_SED_H
-#include "Evenement.h"
+#include "Event.h"
 
 class SED {
 
 public :
     SED();
-    void ajuster(Evenement);
+    void ajuster(Event);
     double heure();
     void lancer();
 };
