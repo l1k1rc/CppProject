@@ -5,18 +5,15 @@
 #include "Bank.h"
 #include "Cashier.h"
 
-Bank ::Banque() {
+Bank ::Bank() {
 
 }
 
-int Bank ::nbCaissier() {
+Cashier Bank ::getFreeCashier() {
 
 }
 
-int Bank ::nbClients() {
 
-}
+int Bank::nbCashier() {}
 
-Cashier Bank::unCaissierDispo() {
-
-}
+int Bank::nbClients() {}

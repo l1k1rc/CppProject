@@ -4,12 +4,18 @@
 
 #ifndef BANKPROJECT_BANK_H
 #define BANKPROJECT_BANK_H
+#include "Cashier.h"
+#include "Queue.h"
 class Bank
 {
 public :
     Bank();
     int nbCashier();
     int nbClients();
-    void cashierIsFree();
+    Cashier getFreeCashier();
+
+private:
+    Cashier cashier[4];
+    Queue queue;
 };
 #endif //BANKPROJECT_BANK_H
