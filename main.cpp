@@ -6,22 +6,15 @@
 #include "Queue.h"
 using namespace std;
 
-Client get(list<Client> _list, int _i) {
-    list<Client>::iterator it = _list.begin();
-    for (int i = 0; i < _i; i++) {
-        ++it;
-    }
-    return *it;
-}
 
 
 int main(){
-    Queue queue;
-    Client c1 = Client("Patrick");
-    queue.add(c1);
-    Client c2 = queue.remove();
-    cout << c2.getName() << '\n';
-    cout << queue.isEmpty();
+    Queue q;
+    Client c = Client(2.01);
+    cout << c.getArrivaltime() << endl;
+    q.add(c);
+    cout << q.isEmpty() << endl;
+    cout << q.getQueueSize() << endl;
 
 }
 //
@@ -52,6 +45,13 @@ int main(){
     // base iterator given as first argument
     auto it1 = std::next(nbClient.begin(), 2);
     std::cout << "2nd element = " << (*it1).getName() << std::endl;
+
+    Queue queue;
+    Client c1 = Client("Patrick");
+    queue.add(c1);
+    Client c2 = queue.remove();
+    cout << c2.getName() << '\n';
+    cout << queue.isEmpty();
     return 0;
 }*/
 

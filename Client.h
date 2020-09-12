@@ -9,13 +9,11 @@ class Client : public std::error_code {
 
 public :
     Client();
-
-    Client(std::string name1);
-    std::string getName();
-    double heureArrivee();
+    Client(double arrivalTime);
+    double getArrivaltime();
 
 private:
-    std::string name;
+    double arrivalT;
 };
 
 #endif //BANKPROJECT_CLIENT_H

@@ -4,7 +4,7 @@
 
 #include "Client.h"
 #include "Queue.h"
-
+#include <list>
 Queue :: Queue(){}
 
 void Queue::add(Client c) {
@@ -37,4 +37,8 @@ Client Queue::remove() {
         clientQueue.pop_front();
         return c;
     }
+}
+
+int Queue::getQueueSize() {
+    return clientQueue.size();
 }

@@ -17,6 +17,7 @@ public :
     void add(Client);
     bool isEmpty();
     Client remove();
+    int getQueueSize();
 
 private:
     std::list<Client> clientQueue;
