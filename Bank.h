@@ -16,7 +16,7 @@ public :
     Cashier getFreeCashier();
     std::string toString();
 private:
-    Cashier cashiers[4];
+    Cashier *cashiers;
     Queue queue;
 };
 #endif //BANKPROJECT_BANK_H
