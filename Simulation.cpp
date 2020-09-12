@@ -11,7 +11,6 @@ Simulation::Simulation(int simulationT, int cashierT) {
     srand((unsigned int) time(NULL));
 }
 void Simulation::simulate() {
-    Client arrivedC;
     Bank bank;
     Queue queue = bank.getQueue();
     for(int actualTime = 0; actualTime<simulationTime; actualTime++){
