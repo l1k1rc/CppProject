@@ -8,6 +8,7 @@
 Queue :: Queue(){}
 
 void Queue::add(Client c) {
+    std::cout << "Client n°" << c.getArrivaltime() << std::endl;
     clientQueue.push_back(c);
 }
 

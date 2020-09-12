@@ -11,18 +11,17 @@ Simulation::Simulation(int simulationT, int cashierT) {
     srand((unsigned int) time(NULL));
 }
 void Simulation::simulate() {
-    /*Client arrivedC;
+    Client arrivedC;
+    Bank bank;
+    Queue queue = bank.getQueue();
     for(int actualTime = 0; actualTime<simulationTime; actualTime++){
         if (actualTime % 5 == 1){
+            queue.add(Client(rand()%30+1));
+            std::cout << "Long : " << queue.getQueueSize() << std::endl;
 
-            if(bank.isACashierFree()){
-                bank.getFreeCashier().servir(arrivedC, rand()%10+1);
-            }else
-                std::cout << "Test 1" << std::endl;
-                bank.getQueue().add(Client(2.09));
         }
     }
-    std::cout << bank.getQueue().isEmpty() << std::endl; */
+    std::cout << bank.getQueue().isEmpty() << std::endl;
 }
 double Simulation::tempsMoyenArrivees() {}
 

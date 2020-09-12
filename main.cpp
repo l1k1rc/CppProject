@@ -13,12 +13,11 @@ using namespace std;
 int main() {
     Simulation simulation = Simulation(200, 4);
     simulation.simulate();
-    Queue queue;
-    Bank bank (4, queue);
-    bank.getQueue().add(Client(3));
-    queue.add(Client(3));
-    cout << "Long : " << bank.getQueue().getQueueSize();
-    cout << "\nTEST : " << queue.getQueueSize();
+
+
+
+
+    //cout << "\nTEST : " << queue.getQueueSize();
 
 }
 //
