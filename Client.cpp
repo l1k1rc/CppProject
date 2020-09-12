@@ -3,19 +3,12 @@
 //
 #include "Client.h"
 #include <iostream>
-Client::Client() {
+Client::Client() {}
 
+Client::Client(double arrivalTime) {
+    this->arrivalT = arrivalTime;
 }
 
-double Client::heureArrivee() {
-    std::cout << "Raton" << std::endl;
-    return 0.5;
-}
-
-Client::Client(std::string name1) {
-    this->name = name1;
-}
-
-std::string Client::getName() {
-    return name;
+double Client::getArrivaltime() {
+    return arrivalT;
 }

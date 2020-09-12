@@ -4,26 +4,41 @@
 
 #include "Client.h"
 #include "Queue.h"
+#include <list>
+Queue :: Queue(){}
 
-Queue :: Queue(){
+void Queue::add(Client c) {
+    clientQueue.push_back(c);
+}
+
+double Queue::averageWaitingTime() {
 
 }
 
-int Queue ::longeurMax(){
+bool Queue::isEmpty() {
+    if (clientQueue.empty())
+        return true;
+    else
+        return false;
+}
+
+double Queue::longAVER() {
 
 }
-double Queue :: longeurMoyenne(){
 
+int Queue::longMAX() {
+    return clientQueue.size();
 }
-double Queue :: tempsMoyenAttente() {
 
+Client Queue::remove() {
+    Client c;
+    if(!clientQueue.empty()){
+        c = clientQueue.front();
+        clientQueue.pop_front();
+        return c;
+    }
 }
-void Queue :: ajouter(Client){
 
-}
-bool Queue :: estVide(){
-
-}
-Client Queue ::retirer() {
-
+int Queue::getQueueSize() {
+    return clientQueue.size();
 }

@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Bank.h"
 #include "Cashier.h"
-
+#include "Queue.h"
 using namespace std;
 
 Bank::Bank() {}
@@ -26,6 +26,12 @@ int Bank::nbCashier() {
 }
 
 int Bank::nbClients() {
+    int servedCl = 0;
+    for (Cashier cashier : cashiers){
+        if (!cashier.estDispo())
+            servedCl++;
+    }
+    return queue.getQueueSize() + servedCl;
 }
 
 std::string Bank::toString(){

@@ -5,17 +5,22 @@
 #ifndef BANKPROJECT_QUEUE_H
 #define BANKPROJECT_QUEUE_H
 #include "Client.h"
+#include <list>
 
 class Queue : public Client{
 
 public :
     Queue();
-    int longeurMax();
-    double longeurMoyenne();
-    double tempsMoyenAttente();
-    void ajouter(Client);
-    bool estVide();
-    Client retirer();
+    int longMAX();
+    double longAVER();
+    double averageWaitingTime();
+    void add(Client);
+    bool isEmpty();
+    Client remove();
+    int getQueueSize();
+
+private:
+    std::list<Client> clientQueue;
 };
 
 #endif //BANKPROJECT_QUEUE_H
