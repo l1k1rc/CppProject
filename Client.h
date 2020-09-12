@@ -5,7 +5,7 @@
 #ifndef BANKPROJECT_CLIENT_H
 #define BANKPROJECT_CLIENT_H
 #include <iostream>
-class Client {
+class Client : public std::error_code {
 
 public :
     Client();

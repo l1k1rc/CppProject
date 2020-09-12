@@ -9,21 +9,32 @@ Queue :: Queue(){
 
 }
 
-int Queue ::longeurMax(){
+void Queue::add(Client c) {
+    clientQueue.push_back(c);
+}
+
+double Queue::averageWaitingTime() {
 
 }
-double Queue :: longeurMoyenne(){
+
+bool Queue::isEmpty() {
+    if (clientQueue.empty())
+        return true;
+    else
+        return false;
+}
+
+double Queue::longAVER() {
 
 }
-double Queue :: tempsMoyenAttente() {
 
+int Queue::longMAX() {
+    return clientQueue.size();
 }
-void Queue :: ajouter(Client){
 
-}
-bool Queue :: estVide(){
-
-}
-Client Queue ::retirer() {
-
+Client Queue::remove() {
+    if(!clientQueue.empty()){
+        clientQueue.pop_front();
+        return clientQueue.front();
+    }
 }
