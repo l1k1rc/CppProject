@@ -3,11 +3,14 @@
 //
 
 #include "Arrival.h"
+#include "Client.h"
+#include "Queue.h"
 
 Arrival :: Arrival(){
 
 }
 
+// Client arrival then u have to know if
 void Arrival ::traiter(){
 
 }

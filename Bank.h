@@ -14,6 +14,7 @@ public :
     int nbCashier();
     int nbClients();
     Cashier getFreeCashier();
+    Queue getQueue();
     std::string toString();
 private:
     Cashier cashiers[4];

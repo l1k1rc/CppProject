@@ -23,6 +23,7 @@ double Cashier :: tempsMoyenService(){
     return somme/taille;
 }
 
+// Total number of client served in the simulation
 int Cashier ::nbClient() {
     return NbClient;
 }

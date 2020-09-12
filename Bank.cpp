@@ -9,7 +9,9 @@ using namespace std;
 
 Bank::Bank() {}
 
-Bank::Bank(int cCount) {}
+Bank::Bank(int cCount) {
+
+}
 
 Cashier Bank::getFreeCashier() {
     for (Cashier cashier : cashiers) {
@@ -17,7 +19,7 @@ Cashier Bank::getFreeCashier() {
             return cashier;
         }
     }
-    return NULL;
+    return false;
 }
 
 
@@ -32,6 +34,10 @@ int Bank::nbClients() {
             servedCl++;
     }
     return queue.getQueueSize() + servedCl;
+}
+
+Queue Bank::getQueue() {
+    return queue;
 }
 
 std::string Bank::toString(){
