@@ -5,9 +5,7 @@
 #include "Client.h"
 #include "Queue.h"
 
-Queue :: Queue(){
-
-}
+Queue :: Queue(){}
 
 void Queue::add(Client c) {
     clientQueue.push_back(c);
@@ -33,8 +31,10 @@ int Queue::longMAX() {
 }
 
 Client Queue::remove() {
+    Client c;
     if(!clientQueue.empty()){
+        c = clientQueue.front();
         clientQueue.pop_front();
-        return clientQueue.front();
+        return c;
     }
 }
