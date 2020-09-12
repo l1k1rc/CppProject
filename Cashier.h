@@ -5,10 +5,17 @@
 #ifndef BANKPROJECT_CASHIER_H
 #define BANKPROJECT_CASHIER_H
 #include "Client.h"
+#include<unknwn.h>
+#include<list>
 
 class Cashier {
+private:
 public :
     Cashier();
+    boolean dispo = true;
+    double serviceTime;
+    int NbClient = 0;
+    std::list<double> ListTime;
     Cashier(double averageTimeService);
     double tempsMoyenService();
     int nbClient();
