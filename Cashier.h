@@ -9,12 +9,12 @@
 
 class Cashier {
 private:
-public :
-    Cashier();
+    int NbClient = 0;
     bool dispo = true;
     double serviceTime;
-    int NbClient = 0;
     std::list<double> ListTime;
+public :
+    Cashier();
     Cashier(double averageTimeService);
     double tempsMoyenService();
     int nbClient();
