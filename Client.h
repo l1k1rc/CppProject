@@ -4,15 +4,18 @@
 
 #ifndef BANKPROJECT_CLIENT_H
 #define BANKPROJECT_CLIENT_H
-
+#include <iostream>
 class Client {
 
 public :
     Client();
 
-    Client(double time);
-
+    Client(std::string name1);
+    std::string getName();
     double heureArrivee();
+
+private:
+    std::string name;
 };
 
 #endif //BANKPROJECT_CLIENT_H
