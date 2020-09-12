@@ -3,27 +3,26 @@
 //
 #include "Simulation.h"
 
-Simulation::Simulation() {
-
-}
+Simulation::Simulation() {}
 
 Simulation::Simulation(int simulationT, int cashierT) {
     this->simulationTime = simulationT;
     this->cashierCount = cashierT;
-    this->bank =  Bank(cashierT);
     srand((unsigned int) time(NULL));
 }
 void Simulation::simulate() {
-    Client thisClient;
+    /*Client arrivedC;
     for(int actualTime = 0; actualTime<simulationTime; actualTime++){
         if (actualTime % 5 == 1){
-            bank.getQueue().add(Client(rand()%10+1));
-            if(bank.getFreeCashier()){
 
-            }
-
+            if(bank.isACashierFree()){
+                bank.getFreeCashier().servir(arrivedC, rand()%10+1);
+            }else
+                std::cout << "Test 1" << std::endl;
+                bank.getQueue().add(Client(2.09));
         }
     }
+    std::cout << bank.getQueue().isEmpty() << std::endl; */
 }
 double Simulation::tempsMoyenArrivees() {}
 

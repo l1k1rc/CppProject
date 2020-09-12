@@ -9,7 +9,7 @@ class Client : public std::error_code {
 
 public :
     Client();
-    Client(double arrivalTime);
+    Client(int arrivalTime);
     double getArrivaltime();
 
 private:

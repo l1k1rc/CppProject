@@ -5,34 +5,20 @@
 #include <list>
 #include "Queue.h"
 #include "Cashier.h"
+#include "Simulation.h"
 
 using namespace std;
 
 
-
-int main(){
-    Bank b = Bank(4);
-    Queue q =  Queue();
-    Cashier c = Cashier();
-    Client c1 = Client(2.09);
-    Client c2 = Client(3.15);
-    Client c3 = Client(4.98);
-    Client c4 = Client(5.80);
-    Client c5 = Client(7.80);
-    q.add(c1);
-    q.add(c2);
-    q.add(c3);
-    q.add(c4);
-    q.add(c5);
-    cout << q.getQueueSize() << endl;
-    cout << c.estDispo() << endl;
-    c.servir(c1);
-    c.liberer();
-    c.servir(c2);
-    c.liberer();
-    cout << c.estDispo() << endl;
-    cout << "Temps moyen : " << c.tempsMoyenService() << endl;
-
+int main() {
+    Simulation simulation = Simulation(200, 4);
+    simulation.simulate();
+    Queue queue;
+    Bank bank (4, queue);
+    bank.getQueue().add(Client(3));
+    queue.add(Client(3));
+    cout << "Long : " << bank.getQueue().getQueueSize();
+    cout << "\nTEST : " << queue.getQueueSize();
 
 }
 //

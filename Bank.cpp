@@ -9,17 +9,17 @@ using namespace std;
 
 Bank::Bank() {}
 
-Bank::Bank(int cCount) {
-
+Bank::Bank(int cCount, Queue queueT) {
+    cout << "Bank constructor used." << endl;
+    this->queue = queueT;
 }
 
 Cashier Bank::getFreeCashier() {
     for (Cashier cashier : cashiers) {
-        if (cashier.estDispo()) {
+        if (cashier.isFree()) {
             return cashier;
         }
     }
-    return false;
 }
 
 
@@ -30,12 +30,20 @@ int Bank::nbCashier() {
 int Bank::nbClients() {
     int servedCl = 0;
     for (Cashier cashier : cashiers){
-        if (!cashier.estDispo())
+        if (!cashier.isFree())
             servedCl++;
     }
     return queue.getQueueSize() + servedCl;
 }
 
+bool Bank::isACashierFree() {
+    for (Cashier cashier : cashiers) {
+        if (cashier.isFree()) {
+            return true;
+        }
+    }
+    return false;
+}
 Queue Bank::getQueue() {
     return queue;
 }

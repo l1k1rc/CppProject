@@ -10,12 +10,13 @@ class Bank
 {
 public :
     Bank();
-    Bank(int cCount);
+    Bank(int cCount, Queue queueT);
     int nbCashier();
     int nbClients();
     Cashier getFreeCashier();
     Queue getQueue();
     std::string toString();
+    bool isACashierFree();
 private:
     Cashier cashiers[4];
     Queue queue;

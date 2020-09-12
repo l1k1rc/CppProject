@@ -19,7 +19,7 @@ public :
     Client remove();
     int getQueueSize();
 
-private:
+public:
     std::list<Client> clientQueue;
 };
 

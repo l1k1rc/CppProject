@@ -11,16 +11,16 @@ class Cashier {
 private:
     int NbClient = 0;
     bool dispo = true;
-    double serviceTime;
-    std::list<double> ListTime;
+    int serviceTime;
+    std::list<int> ListTime;
 public :
     Cashier();
-    Cashier(double averageTimeService);
+    void doService();
     double tempsMoyenService();
     int nbClient();
     double tauxOccupation();
-    bool estDispo();
-    void servir(Client);
+    bool isFree();
+    void servir(Client, int serviceT);
     void liberer();
 };
 #endif //BANKPROJECT_CASHIER_H

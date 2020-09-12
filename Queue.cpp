@@ -18,8 +18,10 @@ double Queue::averageWaitingTime() {
 bool Queue::isEmpty() {
     if (clientQueue.empty())
         return true;
-    else
+    else {
+        std::cout << "Queue isn't empty." << std::endl;
         return false;
+    }
 }
 
 double Queue::longAVER() {
@@ -40,5 +42,6 @@ Client Queue::remove() {
 }
 
 int Queue::getQueueSize() {
+    std::cout << "Size queue in QueueClass is : " << clientQueue.size() << std::endl;
     return clientQueue.size();
 }

@@ -5,10 +5,11 @@
 #include <iostream>
 Client::Client() {}
 
-Client::Client(double arrivalTime) {
+Client::Client(int arrivalTime) {
     this->arrivalT = arrivalTime;
 }
 
 double Client::getArrivaltime() {
     return arrivalT;
 }
+
