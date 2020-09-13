@@ -3,7 +3,7 @@
 //
 /*!
  * \file Cashier.h
- * \brief Classe caissier
+ * \brief Classe Cashier
  * \author SAINT-AMAND Matthieu, DUCROUX Guillaume
  * \version 1
  */

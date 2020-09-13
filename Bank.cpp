@@ -1,6 +1,13 @@
 //
 // Created by l1k1 on 11/09/2020.
 //
+
+/*!
+ * \file Bank.cpp
+ * \brief Classe Bank
+ * \author SAINT-AMAND Matthieu, DUCROUX Guillaume
+ * \version 1
+ */
 #include <iostream>
 #include "Bank.h"
 #include "Cashier.h"
