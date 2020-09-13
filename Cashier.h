@@ -25,7 +25,7 @@ class Cashier {
 private:
     int NbClient = 0; /*!< Nombre de client servis par le caissier*/
     bool dispo = true; /*!< Variable pour savoir si le caissier est libre*/
-    int serviceTime; /*!< Temps de service du caissier pour un client*/
+    /*!< Temps de service du caissier pour un client*/
     std::list<int> ListTime; /*!< Liste des temps de service d'un caissier pour tout ses clients*/
 public :
     /*!
@@ -83,5 +83,7 @@ public :
      *  avoir servis un client
      */
     void liberer();
+
+    int serviceTime;
 };
 #endif //BANKPROJECT_CASHIER_H

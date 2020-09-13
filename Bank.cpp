@@ -15,7 +15,11 @@ Bank::Bank(int cCount, Queue queueT) {
 }
 
 Cashier *Bank::getFreeCashier() {
-    return &cashiers[1];
+    for(int i=0; i<DIM;i++){
+        if(this->cashiers[i].isFree()){
+            return &cashiers[i];
+        }
+    }
 }
 
 

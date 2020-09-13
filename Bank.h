@@ -19,7 +19,8 @@ public :
     bool isACashierFree();
     Cashier *getCashiersArray();
 public:
-    Cashier cashiers[3] = {Cashier(),Cashier(), Cashier()};
+    static const int DIM = 3;
+    Cashier cashiers[DIM] = {Cashier(),Cashier(), Cashier()};
     Queue queue;
 };
 #endif //BANKPROJECT_BANK_H
