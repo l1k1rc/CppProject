@@ -1,6 +1,14 @@
 //
 // Created by l1k1 on 11/09/2020.
 //
+
+/*!
+ * \file Cashier.cpp
+ * \brief Classe caissier
+ * \author SAINT-AMAND Matthieu, DUCROUX Guillaume
+ * \version 1
+ */
+
 #include "Cashier.h"
 #include <ctime>
 #include <cstdlib>
