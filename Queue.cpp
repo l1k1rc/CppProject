@@ -17,8 +17,10 @@ double Queue::averageWaitingTime() {
 }
 
 bool Queue::isEmpty() {
-    if (clientQueue.empty())
+    if (clientQueue.empty()) {
+        std::cout << "Queue is empty." << std::endl;
         return true;
+    }
     else {
         std::cout << "Queue isn't empty." << std::endl;
         return false;
