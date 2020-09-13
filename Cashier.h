@@ -16,7 +16,7 @@
 /*! \class Cashier
    * \brief classe representant le caissier
    *
-   *  La classe gère le cassier par le biais de méthode
+   *  La classe gère le caissier par le biais de méthode
    *  comme servir le client, savoir si le caissier est libre
    *  ou en train de servir quelqu'un
    */

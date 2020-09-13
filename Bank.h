@@ -60,7 +60,7 @@ public :
      *
      *  \return la file d''attente
      */
-    Queue getQueue();
+    Queue *getQueue();
     /*!
      *  \brief Afficher un texte
      *

@@ -11,14 +11,22 @@ using namespace std;
 
 
 int main() {
-    Simulation simulation = Simulation(200, 4);
+    /*Bank bank;
+    Client c (2);
+    Client c2 (2);
+    Client c3 (4);
+    bank.getCashiersArray()[2].servir(c, 5);
+    bank.getFreeCashier()->servir(c2, 5);
+    bank.getFreeCashier()->servir(c3, 5);
+
+
+    cout << bank.getCashiersArray()[0].isFree() << endl;
+    cout << bank.getCashiersArray()[1].isFree()<< endl;
+    cout << bank.getCashiersArray()[2].isFree()<< endl;*/
+    Simulation simulation(30,3);
     simulation.simulate();
 
-
-
-
-    //cout << "\nTEST : " << queue.getQueueSize();
-
+    //bank.getCashiersArray()[0];
 }
 //
 // Created by l1k1 on 11/09/2020.
