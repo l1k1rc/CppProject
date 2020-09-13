@@ -14,7 +14,7 @@ public :
     int nbCashier();
     int nbClients();
     Cashier *getFreeCashier();
-    Queue getQueue();
+    Queue *getQueue();
     std::string toString();
     bool isACashierFree();
     Cashier *getCashiersArray();

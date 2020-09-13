@@ -44,8 +44,8 @@ bool Bank::isACashierFree() {
     }
     return false;
 }
-Queue Bank::getQueue() {
-    return queue;
+Queue *Bank::getQueue() {
+    return &queue;
 }
 
 Cashier *Bank::getCashiersArray() {
