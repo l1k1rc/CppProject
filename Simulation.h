@@ -12,7 +12,7 @@ public :
     double dureePrevue();
     double tempsMoyenArrivees();
     void simulate();
-
+    void updateServices();
 private:
     Bank bank;
     int simulationTime;

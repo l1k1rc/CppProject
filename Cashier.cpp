@@ -25,17 +25,19 @@ int Cashier ::nbClient() {
     return NbClient;
 }
 double Cashier ::tauxOccupation() {return NULL;}
+
 bool Cashier ::isFree() {
   return dispo;
 }
 void Cashier ::servir(Client c,int serviceT) {
+    dispo = false;
     ListTime.push_front(serviceT);
     std::cout << "Service du client n°" << c.getArrivaltime() << " avec un temps de service de : " << serviceT << " tours.\n";
-    dispo = false;
     NbClient++;
     this->serviceTime=serviceT;
 }
 void Cashier ::liberer() {
+    std::cout << "Fin du service" << std::endl;
     dispo = true;
     this->serviceTime=0;
 }

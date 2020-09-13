@@ -7,8 +7,8 @@
 #include "Client.h"
 #include<list>
 
-class Cashier {
-private:
+class Cashier : public std::error_code {
+public:
     int NbClient = 0;
     bool dispo = true;
     int serviceTime;

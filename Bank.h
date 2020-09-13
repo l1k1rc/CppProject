@@ -13,12 +13,13 @@ public :
     Bank(int cCount, Queue queueT);
     int nbCashier();
     int nbClients();
-    Cashier getFreeCashier();
+    Cashier *getFreeCashier();
     Queue getQueue();
     std::string toString();
     bool isACashierFree();
-private:
-    Cashier cashiers[4];
+    Cashier *getCashiersArray();
+public:
+    Cashier cashiers[3] = {Cashier(),Cashier(), Cashier()};
     Queue queue;
 };
 #endif //BANKPROJECT_BANK_H
