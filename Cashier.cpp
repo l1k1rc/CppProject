@@ -43,13 +43,16 @@ void Cashier ::servir(Client c,int serviceT) {
     this->serviceTime=serviceT;
 }
 void Cashier ::liberer() {
-    std::cout << "Fin du service" << std::endl;
+    std::cout << "####### End of service #######";
     dispo = true;
     this->serviceTime=0;
 }
 void Cashier::doService() {
-    if(serviceTime>0)
+    if(this->serviceTime>0) {
+        std::cout << "Service time decr : " << this->serviceTime << std::endl;
         this->serviceTime--;
-    else
-        liberer();
+    }
+    else {
+        this->liberer();
+    }
 }

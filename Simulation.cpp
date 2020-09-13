@@ -10,8 +10,7 @@ Simulation::Simulation(int simulationT, int cashierT) {
     this->cashierCount = cashierT;
     srand((unsigned int) time(NULL));
 }
-void Simulation::simulate() { /*
-    Bank bank;
+void Simulation::simulate() {
     Queue queue = bank.getQueue();
     for(int actualTime = 0; actualTime<simulationTime; actualTime++){
         std::cout << "################ Tour n°" << actualTime << " ################"<<std::endl;
@@ -22,18 +21,22 @@ void Simulation::simulate() { /*
         }
         // Si la queue n'est pas vide et si un caissier est disponible -> on prend ce caissier et on sert le client
         if(!queue.isEmpty() && bank.isACashierFree()){
-            bank.getFreeCashier().servir(queue.remove(), rand()%10+1);
+            bank.getFreeCashier()->servir(queue.remove(), rand()%10+1);
             std::cout << "Traitement du client : "<< std::endl;
-            if (!bank.isACashierFree())
-                std::cout << "Pas de caissier dispo" << std::endl;
         }
-
+        if(!bank.isACashierFree())
+            std::cout << "Pas de caissier disponible." << std::endl;
+        updateServices();
     }
-    std::cout << bank.getQueue().isEmpty() << std::endl;*/
+    std::cout << bank.getQueue().isEmpty() << std::endl;
 }
 // Allow to upgrade the work of each cashier free. remainingServiceTime-- for each time.
 void Simulation::updateServices() {
-    Cashier cashiers[4];
+    for (int i=0; i<bank.nbCashier();i++){
+        if(!bank.getCashiersArray()[i].isFree()){
+            bank.getCashiersArray()[i].doService();
+        }
+    }
 
 }
 double Simulation::tempsMoyenArrivees() {}
