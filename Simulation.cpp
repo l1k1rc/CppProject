@@ -10,6 +10,7 @@ Simulation::Simulation(int simulationT, int cashierT) {
     this->simulationTime = simulationT;
     this->cashierCount = cashierT;
     srand((unsigned int) time(NULL));
+    p.init();
 }
 void Simulation::simulate() {
     //Queue queue = bank.getQueue();
@@ -22,7 +23,7 @@ void Simulation::simulate() {
         }
         // Si la queue n'est pas vide et si un caissier est disponible -> on prend ce caissier et on sert le client
         if(!bank.getQueue()->isEmpty() && bank.isACashierFree()){
-            bank.getFreeCashier()->servir(bank.getQueue()->remove(), rand()%10+1);
+            bank.getFreeCashier()->servir(bank.getQueue()->remove(), p.next(5));
             std::cout << "Traitement du client. "<< std::endl;
         }
         if(!bank.isACashierFree())
