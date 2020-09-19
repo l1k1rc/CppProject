@@ -4,11 +4,12 @@
 
 #include "Client.h"
 #include "Queue.h"
+#include "Color.h"
 #include <list>
 Queue :: Queue(){}
 
 void Queue::add(Client c) {
-    std::cout << "Client n°" << c.getArrivaltime() << std::endl;
+    std::cout << GREEN << "Arrivée Client n°" << c.getArrivaltime() << RESET << std::endl;
     clientQueue.push_back(c);
 }
 

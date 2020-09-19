@@ -73,7 +73,7 @@ public :
      *  Methode qui permet de servir un client
      *
      *  \param Client : le client à servir,
-     *  serviceT : le temps de service du client
+     *  \param serviceT : le temps de service du client
      */
     void servir(Client, int serviceT);
     /*!
@@ -83,7 +83,8 @@ public :
      *  avoir servis un client
      */
     void liberer();
-
+    int getId();
     int serviceTime;
+    int id;
 };
 #endif //BANKPROJECT_CASHIER_H

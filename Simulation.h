@@ -5,6 +5,7 @@
 #ifndef BANKPROJECT_SIMULATION_H
 #define BANKPROJECT_SIMULATION_H
 #include "Bank.h"
+#include "poisson.h"
 class Simulation {
 public :
     Simulation();
@@ -14,6 +15,7 @@ public :
     void simulate();
     void updateServices();
 private:
+    Poisson p;
     Bank bank;
     int simulationTime;
     int cashierCount;

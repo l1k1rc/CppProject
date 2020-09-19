@@ -2,7 +2,7 @@
 // Created by l1k1 on 11/09/2020.
 //
 #include "Simulation.h"
-#include "Color.h"
+
 Simulation::Simulation() {}
 
 Simulation::Simulation(int simulationT, int cashierT) {
@@ -11,8 +11,9 @@ Simulation::Simulation(int simulationT, int cashierT) {
     srand((unsigned int) time(NULL));
 }
 void Simulation::simulate() {
+    //Queue queue = bank.getQueue();
     for(int actualTime = 0; actualTime<simulationTime; actualTime++){
-        std::cout << BOLDBLACK << "################ Tour n°" << actualTime << " ################"<<RESET<<std::endl;
+        std::cout << "################ Tour n°" << actualTime << " ################"<<std::endl;
         // Arrivée des clients tous les 5 tours
         if (actualTime % 5 == 1){
             bank.getQueue()->add(Client(actualTime));
