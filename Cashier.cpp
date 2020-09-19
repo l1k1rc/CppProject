@@ -58,7 +58,7 @@ void Cashier::servir(Client c, int serviceT) {
 }
 
 void Cashier::liberer() {
-    std::cout << BOLDCYAN << "####### End of service #######\n" << RESET;
+    std::cout << BOLDCYAN << "####### End of a service #######\n" << RESET;
     dispo = true;
     ListDisp.push_front(dispo);
     this->serviceTime = 0;

@@ -20,12 +20,10 @@ void Simulation::simulate() {
     for (int actualTime = 0; actualTime <= simulationTime; actualTime++) {
         std::cout << BOLDBLUE << "################ Service time n°" << actualTime << " ################" << RESET
                   << std::endl;
-        // Arrivée des clients tous les 5 tours
         if (arrival.traiter()) {
             clientNumb++;
             bank.getQueue()->add(Client(actualTime), clientNumb);
         }
-        // Si la queue n'est pas vide et si un caissier est disponible -> on prend ce caissier et on sert le client
         if (!bank.getQueue()->isEmpty() && bank.isACashierFree()) {
             bank.getFreeCashier()->servir(bank.getQueue()->remove(), p.next(10)); //p.next(5)
             std::cout << "Treatment of the client. " << std::endl;
