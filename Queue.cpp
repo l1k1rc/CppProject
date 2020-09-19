@@ -5,7 +5,6 @@
 #include "Client.h"
 #include "Queue.h"
 #include "Color.h"
-#include <list>
 
 Queue::Queue() {}
 

@@ -3,8 +3,6 @@
 //
 
 #include "Arrival.h"
-#include "Client.h"
-#include "Queue.h"
 
 Arrival :: Arrival(){
     poisson.init();

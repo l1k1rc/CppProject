@@ -10,8 +10,6 @@
  */
 #include <iostream>
 #include "Bank.h"
-#include "Cashier.h"
-#include "Queue.h"
 using namespace std;
 
 Bank::Bank() {}

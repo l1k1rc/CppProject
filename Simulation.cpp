@@ -4,7 +4,6 @@
 #include "Simulation.h"
 #include "Color.h"
 #include <time.h>
-#include "Arrival.h"
 
 Simulation::Simulation() {}
 
