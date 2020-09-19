@@ -58,6 +58,14 @@ Queue *Bank::getQueue() {
 Cashier *Bank::getCashiersArray() {
     return cashiers;
 }
+bool Bank::allFree() {
+    for ( Cashier cashier : cashiers){
+        if (!cashier.isFree()){
+            return false;
+        }
+    }
+    return true;
+}
 std::string Bank::toString(){
     cout << "Actual number of cashier in the bank is: " << nbCashier() << endl;
 }

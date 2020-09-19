@@ -86,6 +86,7 @@ public :
      *  \return une liste de caissiers
      */
     Cashier *getCashiersArray();
+    bool allFree();
 public:
     static const int DIM = 3;
     Cashier cashiers[DIM] = {Cashier(),Cashier(), Cashier()};

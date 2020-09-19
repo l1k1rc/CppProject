@@ -62,14 +62,3 @@ void Cashier::doService() {
         this->liberer();
     }
 }
-
-char Cashier::randomID() {
-    char c;
-    int r;
-
-    srand(time(NULL));
-    r = rand() % 26;
-    c = 'a' + r;
-
-    return c;
-}

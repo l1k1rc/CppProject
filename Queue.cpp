@@ -46,6 +46,6 @@ Client Queue::remove() {
 }
 
 int Queue::getQueueSize() {
-    std::cout << "Size queue in QueueClass is : " << clientQueue.size() << std::endl;
+    std::cout << "Size queue is : "<< BOLDCYAN << clientQueue.size() << RESET << " clients." << std::endl;
     return clientQueue.size();
 }

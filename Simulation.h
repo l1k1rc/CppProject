@@ -11,9 +11,10 @@ public :
     Simulation();
     Simulation(int simulationT, int cashierT);
     double dureePrevue();
-    double tempsMoyenArrivees();
+    double averageTimeService();
     void simulate();
     void updateServices();
+    void finalize();
 private:
     Poisson p;
     Bank bank;

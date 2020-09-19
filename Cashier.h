@@ -83,7 +83,7 @@ public :
      *  avoir servis un client
      */
     void liberer();
-    char randomID();
+    int id;
     int serviceTime;
 };
 #endif //BANKPROJECT_CASHIER_H
