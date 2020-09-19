@@ -8,6 +8,6 @@ Departure :: Departure(){
 
 }
 
-void Departure ::traiter(){
+bool Departure ::traiter(){
 
 }

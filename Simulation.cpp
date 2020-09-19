@@ -4,6 +4,7 @@
 #include "Simulation.h"
 #include "Color.h"
 #include <time.h>
+#include "Arrival.h"
 
 Simulation::Simulation() {}
 
@@ -15,27 +16,27 @@ Simulation::Simulation(int simulationT, int cashierT) {
 }
 
 void Simulation::simulate() {
-    for (int actualTime = 0; actualTime < simulationTime; actualTime++) {
-        std::cout << BOLDBLUE << "################ Tour n°" << actualTime << " ################" << RESET << std::endl;
+    for (int actualTime = 0; actualTime <= simulationTime; actualTime++) {
+        std::cout << BOLDYELLOW << arrival.traiter() << RESET << std::endl;
+        std::cout << BOLDBLUE << "################ Service time n°" << actualTime << " ################" << RESET
+                  << std::endl;
         // Arrivée des clients tous les 5 tours
-        if (actualTime % 5 == 1) {
+        if (arrival.traiter()) {
             bank.getQueue()->add(Client(actualTime));
         }
         // Si la queue n'est pas vide et si un caissier est disponible -> on prend ce caissier et on sert le client
         if (!bank.getQueue()->isEmpty() && bank.isACashierFree()) {
             bank.getFreeCashier()->servir(bank.getQueue()->remove(), p.next(10)); //p.next(5)
-            std::cout << "Traitement du client. " << std::endl;
+            std::cout << "Treatment of the client. " << std::endl;
         }
         if (!bank.isACashierFree())
-            std::cout << BOLDYELLOW << "Pas de caissier disponible." << RESET << std::endl;
+            std::cout << BOLDYELLOW << "No cashiers available." << RESET << std::endl;
         updateServices();
         bank.getQueue()->getQueueSize();
     }
-    std::cout << BOLDGREEN "##################### Statistiques #####################" RESET << std::endl;
-    for (int i = 0; i < bank.nbCashier(); i++) {
-        std::cout << GREEN << "# Temps moyen de service pour caissier n°" << i  <<" : "<< bank.getCashiersArray()[i].tempsMoyenService() << RESET << std::endl;
-    }
-    std::cout << BOLDGREEN <<"########################################################" << RESET << std::endl;
+
+    finalize(simulationTime);
+    statistic();
 }
 
 // Allow to upgrade the work of each cashier free. serviceTime-- for each time.
@@ -47,8 +48,31 @@ void Simulation::updateServices() {
     }
 }
 
-void Simulation::finalize() {
-    while (!bank.getQueue()->isEmpty() and bank.)
+void Simulation::finalize(int simTime) {
+    while (!bank.allFree()) {
+        simTime++;
+        std::cout << BOLDBLUE << "################ Bank closing : finalize servicing time n°" << simTime
+                  << " ################" << RESET << std::endl;
+        if (!bank.getQueue()->isEmpty() && bank.isACashierFree()) {
+            bank.getFreeCashier()->servir(bank.getQueue()->remove(), p.next(10)); //p.next(5)
+            std::cout << "Treatment of the client. " << std::endl;
+        }
+        if (!bank.isACashierFree())
+            std::cout << BOLDYELLOW << "No cashiers available." << RESET << std::endl;
+        updateServices();
+        bank.getQueue()->getQueueSize();
+    }
+
+
+}
+
+void Simulation::statistic() {
+    std::cout << BOLDGREEN "##################### Statistics #####################" RESET << std::endl;
+    for (int i = 0; i < bank.nbCashier(); i++) {
+        std::cout << GREEN << "# Average service time for cashier n°" << i << " : "
+                  << bank.getCashiersArray()[i].tempsMoyenService() << RESET << std::endl;
+    }
+    std::cout << BOLDGREEN << "########################################################" << RESET << std::endl;
 }
 
 double Simulation::averageTimeService() {

@@ -5,10 +5,13 @@
 #ifndef BANKPROJECT_ARRIVAL_H
 #define BANKPROJECT_ARRIVAL_H
 #include "Event.h"
-
+#include "poisson.h"
 class Arrival : public Event{
 public :
     Arrival();
-    void traiter();
+    bool traiter();
+
+private:
+    Poisson poisson;
 };
 #endif //BANKPROJECT_ARRIVAL_H

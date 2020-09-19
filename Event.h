@@ -7,9 +7,13 @@
 class Event
 {
 protected :
-    Event();
     Event(double time);
-    void traiter();
+
     double heure();
+
+public:
+    Event();
+
+    virtual bool traiter();
 };
 #endif //BANKPROJECT_EVENT_H

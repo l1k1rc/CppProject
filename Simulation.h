@@ -6,6 +6,9 @@
 #define BANKPROJECT_SIMULATION_H
 #include "Bank.h"
 #include "poisson.h"
+#include "Arrival.h"
+#include "Departure.h"
+
 class Simulation {
 public :
     Simulation();
@@ -14,7 +17,10 @@ public :
     double averageTimeService();
     void simulate();
     void updateServices();
-    void finalize();
+    void finalize(int simTime);
+    void statistic();
+    Arrival arrival;
+    Departure departure;
 private:
     Poisson p;
     Bank bank;

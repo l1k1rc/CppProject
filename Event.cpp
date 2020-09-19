@@ -11,7 +11,7 @@ Event :: Event(){
 Event::Event(double time) {
 
 }
-void Event :: traiter(){
+bool Event :: traiter(){
 
 }
 double Event :: heure(){
