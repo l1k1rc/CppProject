@@ -16,7 +16,6 @@
 
 Cashier::Cashier() {
     srand((unsigned int) time(NULL));
-    this->id = rand()%10+1;
 }
 
 double Cashier::tempsMoyenService() {
@@ -64,6 +63,13 @@ void Cashier::doService() {
     }
 }
 
-int Cashier::getId() {
-    return id;
+char Cashier::randomID() {
+    char c;
+    int r;
+
+    srand(time(NULL));
+    r = rand() % 26;
+    c = 'a' + r;
+
+    return c;
 }

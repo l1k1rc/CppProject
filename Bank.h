@@ -88,7 +88,7 @@ public :
     Cashier *getCashiersArray();
 public:
     static const int DIM = 3;
-    Cashier cashiers[DIM];
+    Cashier cashiers[DIM] = {Cashier(),Cashier(), Cashier()};
     Queue queue;
 };
 #endif //BANKPROJECT_BANK_H

@@ -2,6 +2,8 @@
 // Created by l1k1 on 11/09/2020.
 //
 #include "Simulation.h"
+#include "Color.h"
+#include <time.h>
 
 Simulation::Simulation() {}
 
@@ -9,11 +11,11 @@ Simulation::Simulation(int simulationT, int cashierT) {
     this->simulationTime = simulationT;
     this->cashierCount = cashierT;
     srand((unsigned int) time(NULL));
+    p.init();
 }
 void Simulation::simulate() {
-    //Queue queue = bank.getQueue();
     for(int actualTime = 0; actualTime<simulationTime; actualTime++){
-        std::cout << "################ Tour n°" << actualTime << " ################"<<std::endl;
+        std::cout << BOLDBLUE << "################ Tour n°" << actualTime << " ################"<<RESET<<std::endl;
         // Arrivée des clients tous les 5 tours
         if (actualTime % 5 == 1){
             bank.getQueue()->add(Client(actualTime));
@@ -21,11 +23,11 @@ void Simulation::simulate() {
         }
         // Si la queue n'est pas vide et si un caissier est disponible -> on prend ce caissier et on sert le client
         if(!bank.getQueue()->isEmpty() && bank.isACashierFree()){
-            bank.getFreeCashier()->servir(bank.getQueue()->remove(), rand()%10+1);
+            bank.getFreeCashier()->servir(bank.getQueue()->remove(), 50); //p.next(5)
             std::cout << "Traitement du client. "<< std::endl;
         }
         if(!bank.isACashierFree())
-            std::cout << "Pas de caissier disponible." << std::endl;
+            std::cout << BOLDYELLOW <<"Pas de caissier disponible." << RESET <<std::endl;
         updateServices();
     }
     std::cout << bank.getQueue()->isEmpty() << std::endl;
