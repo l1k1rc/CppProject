@@ -14,7 +14,7 @@ public :
     int longMAX();
     double longAVER();
     double averageWaitingTime();
-    void add(Client);
+    void add(Client, int clientNumb);
     bool isEmpty();
     Client remove();
     int getQueueSize();

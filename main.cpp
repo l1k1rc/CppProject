@@ -17,7 +17,7 @@ using namespace std;
 
 int main ()
 {
-    Simulation simulation(200,4);
+    Simulation simulation(50,4);
     simulation.simulate();
 
 

@@ -13,7 +13,6 @@
 #include <list>
 #include <iostream>
 #include "Color.h"
-
 Cashier::Cashier() {
     srand((unsigned int) time(NULL));
 }
@@ -52,9 +51,9 @@ void Cashier::servir(Client c, int serviceT) {
     dispo = false;
     ListDisp.push_front(dispo);
     ListTime.push_front(serviceT);
-    std::cout << "Service du client n°" << c.getArrivaltime() << " avec un temps de service de : " << serviceT
-              << " tours.\n";
     NbClient++;
+    std::cout << "Service du client avec un temps de service de : " << serviceT
+              << " tours.\n";
     this->serviceTime = serviceT;
 }
 

@@ -8,9 +8,11 @@
 
 Arrival :: Arrival(){
     poisson.init();
+
 }
 
 // Client arrival then u have to know if
 bool Arrival ::traiter(){
     return poisson.next() > 1;
 }
+

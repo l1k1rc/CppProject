@@ -10,7 +10,6 @@ class Arrival : public Event{
 public :
     Arrival();
     bool traiter();
-
 private:
     Poisson poisson;
 };
