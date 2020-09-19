@@ -10,23 +10,73 @@
 using namespace std;
 
 
-int main() {
-    /*Bank bank;
-    Client c (2);
-    Client c2 (2);
-    Client c3 (4);
-    bank.getCashiersArray()[2].servir(c, 5);
-    bank.getFreeCashier()->servir(c2, 5);
-    bank.getFreeCashier()->servir(c3, 5);
+#include <stdio.h>
+#include <math.h>
 
+long fact(int i)
+{
+    long f;
 
-    cout << bank.getCashiersArray()[0].isFree() << endl;
-    cout << bank.getCashiersArray()[1].isFree()<< endl;
-    cout << bank.getCashiersArray()[2].isFree()<< endl;*/
-    Simulation simulation(30,3);
-    simulation.simulate();
+    if (i==0)
+    {
+        return 1;
+    }
+    else
+    {
+        f = fact(i - 1);
+        return i*f;
+    }
 
-    //bank.getCashiersArray()[0];
+}
+
+int main ()
+{
+    int n, k;
+    double e, p, q, r, t, x, y, z;
+
+    printf("entrez la valeur de k entier non nul positif\n");
+    scanf("%d", &k);
+    printf("entrez le nombre d'essais n entier non nul positif\n");
+    scanf("%d", &n);
+
+    x = fact(n);
+    y = fact(k);
+    z = fact(n-k);
+
+    r = x/(y*z);
+
+    printf("la combinaison n de k est : %lf\n", r);
+
+    x = n-1;
+    y = k-1;
+    z = x-y;
+    x = fact(x);
+    y = fact(y);
+    z = fact(z);
+
+    e = x/(y*z);
+    e = e/x;
+    p = pow(e, k);
+
+    printf("la probabilite de succes k de n est : %lf\n", p);
+
+    x = n-k;
+    y = 1-p;
+    q = pow(y, x);
+
+    r = r*p*q;
+    printf("le resultat de la loi binomiale est : %lf\n", r);
+    e = n*p;
+    printf("l'esperance est de : %lf\n", e);
+    t = sqrt(e*q);
+    printf("l'ecart type est de : %lf\n", t);
+
+    x = exp(-e);
+    y = pow (e,k);
+    z = x*y;
+    k = fact(k);
+    x = z/k;
+    printf("la loi de poisson est : %g\n", x);
 }
 //
 // Created by l1k1 on 11/09/2020.
