@@ -27,6 +27,7 @@ private:
     bool dispo = true; /*!< Variable pour savoir si le caissier est libre*/
     /*!< Temps de service du caissier pour un client*/
     std::list<int> ListTime; /*!< Liste des temps de service d'un caissier pour tout ses clients*/
+    std::list<int> ListDisp;
 public :
     /*!
      *  \brief Constructeur
@@ -85,5 +86,6 @@ public :
     void liberer();
     int id;
     int serviceTime;
+
 };
 #endif //BANKPROJECT_CASHIER_H

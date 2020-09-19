@@ -71,6 +71,8 @@ void Simulation::statistic() {
     for (int i = 0; i < bank.nbCashier(); i++) {
         std::cout << GREEN << "# Average service time for cashier n°" << i << " : "
                   << bank.getCashiersArray()[i].tempsMoyenService() << RESET << std::endl;
+        std::cout << YELLOW << "# Occupation time of cashier n°" << i << " : "
+                  << bank.getCashiersArray()[i].tauxOccupation() * 100 << "% busy." << RESET << std::endl;
     }
     std::cout << BOLDGREEN << "########################################################" << RESET << std::endl;
 }
