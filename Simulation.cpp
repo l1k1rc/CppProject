@@ -72,6 +72,7 @@ void Simulation::finalize(int simTime) {
         updateServices();
         bank.getQueue()->getQueueSize();
     }
+
     std::cout << BOLDBLUE << "Final simulation time : " << simTime-- << RESET << std::endl;
 }
 
