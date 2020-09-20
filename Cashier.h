@@ -100,7 +100,12 @@ public :
      */
     void liberer();
 
-    int serviceTime;
+    /*!
+    *  \brief Temps de service
+    *
+    *  Variable qui permet d'associer un temps à un service pour un client
+    */
+    int serviceTime{};
 
 };
 
