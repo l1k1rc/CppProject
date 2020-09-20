@@ -13,9 +13,10 @@
 
 Simulation::Simulation() = default;
 
-Simulation::Simulation(int simulationT, int cashierT) {
+Simulation::Simulation(int simulationT, int cashierT, int averageS) {
     this->simulationTime = simulationT;
     this->cashierCount = cashierT;
+    this->averageService = averageS;
     srand((unsigned int) time(NULL));
     p.init();
 }
@@ -33,7 +34,7 @@ void Simulation::simulate() {
             }
         }
         if (!bank.getQueue()->isEmpty() && bank.isACashierFree()) {
-            bank.getFreeCashier()->servir(bank.getQueue()->remove(), p.next(10)); //p.next(5)
+            bank.getFreeCashier()->servir(bank.getQueue()->remove(), p.next(averageService)); //p.next(5)
             std::cout << "Treatment of the client. " << std::endl;
         }
         if (!bank.isACashierFree())

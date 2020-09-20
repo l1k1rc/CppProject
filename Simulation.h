@@ -17,7 +17,7 @@
 class Simulation {
 public :
     Simulation();
-    Simulation(int simulationT, int cashierT);
+    Simulation(int simulationT, int cashierT, int averageS);
     double dureePrevue();
     void simulate();
     void updateServices();
@@ -30,5 +30,6 @@ private:
     Bank bank;
     int simulationTime{};
     int cashierCount{};
+    int averageService{};
 };
 #endif //BANKPROJECT_SIMULATION_H
