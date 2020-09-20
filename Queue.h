@@ -23,8 +23,9 @@ public :
     bool isEmpty();
     Client remove();
     int getQueueSize();
-
+    void setQueueSize();
 public:
+    std::list<int> queueSize;
     std::list<Client> clientQueue;
 };
 

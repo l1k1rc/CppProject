@@ -23,14 +23,13 @@ Simulation::Simulation(int simulationT, int cashierT) {
 void Simulation::simulate() {
     int clientNumb = 0;
     for (int actualTime = 0; actualTime <= simulationTime; actualTime++) {
+        bank.getQueue()->setQueueSize();
         std::cout << BOLDBLUE << "################ Service time n°" << actualTime << " ################" << RESET
                   << std::endl;
-        // Arrivée des clients tous les 5 tours
         if (arrival.traiter()) {
             clientNumb++;
             bank.getQueue()->add(Client(actualTime), clientNumb);
         }
-        // Si la queue n'est pas vide et si un caissier est disponible -> on prend ce caissier et on sert le client
         if (!bank.getQueue()->isEmpty() && bank.isACashierFree()) {
             bank.getFreeCashier()->servir(bank.getQueue()->remove(), p.next(10)); //p.next(5)
             std::cout << "Treatment of the client. " << std::endl;
@@ -56,6 +55,7 @@ void Simulation::updateServices() {
 
 void Simulation::finalize(int simTime) {
     while (!bank.allFree()) {
+        bank.getQueue()->setQueueSize();
         simTime++;
         std::cout << BOLDBLUE << "################ Bank closing : finalize servicing time n°" << simTime
                   << " ################" << RESET << std::endl;
@@ -73,10 +73,10 @@ void Simulation::finalize(int simTime) {
 }
 
 void Simulation::statistic() {
-    int somme=0;
+    int somme = 0;
     std::cout << BOLDGREEN "##################### Statistics #####################" RESET << std::endl;
     for (int i = 0; i < bank.nbCashier(); i++) {
-        somme+=bank.getCashiersArray()[i].nbClient();
+        somme += bank.getCashiersArray()[i].nbClient();
         std::cout << GREEN << "# Average service time for cashier n°" << i << " : "
                   << bank.getCashiersArray()[i].tempsMoyenService() << RESET << std::endl;
         std::cout << YELLOW << "# Occupation time of cashier n°" << i << " : "
@@ -84,14 +84,12 @@ void Simulation::statistic() {
         std::cout << RED << "# Number of client served by cashier n°" << i << " : "
                   << bank.getCashiersArray()[i].nbClient() << " clients served." << RESET << std::endl;
     }
-    std::cout << RED << "# Total of clients served in the bank : "
+    std::cout << BOLDYELLOW << "# Average length of queue : " << bank.getQueue()->longAVER() << RESET << std::endl;
+    std::cout << BOLDYELLOW << "# Long max of the queue in the simulation : " << bank.getQueue()->longMAX() << RESET
+              << std::endl;
+    std::cout << BOLDRED << "# Total of clients served in the bank : "
               << somme << " clients served." << RESET << std::endl;
-    std::cout << BOLDGREEN << "########################################################" << RESET << std::endl;
+    std::cout << BOLDGREEN << "######################################################" << RESET << std::endl;
 }
-
-double Simulation::averageTimeService() {
-
-}
-
 double Simulation::dureePrevue() {}
 
