@@ -28,7 +28,7 @@ public :
 private:
     Poisson p;
     Bank bank;
-    int simulationTime;
-    int cashierCount;
+    int simulationTime{};
+    int cashierCount{};
 };
 #endif //BANKPROJECT_SIMULATION_H

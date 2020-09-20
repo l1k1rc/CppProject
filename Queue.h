@@ -20,9 +20,9 @@ public :
     double longAVER();
     double averageWaitingTime();
     void add(Client, int clientNumb);
-    bool isEmpty();
+    bool isEmpty() const;
     Client remove();
-    int getQueueSize();
+    int getQueueSize() const;
     void setQueueSize();
 public:
     std::list<int> queueSize;

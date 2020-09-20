@@ -9,9 +9,7 @@
  */
 #include "Event.h"
 
-Event :: Event(){
-
-}
+Event :: Event()= default;
 
 Event::Event(double time) {
 

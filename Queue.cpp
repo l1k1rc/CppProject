@@ -11,8 +11,7 @@
 #include "Queue.h"
 #include "Color.h"
 
-Queue::Queue() {
-}
+Queue::Queue() = default;
 
 void Queue::add(Client c, int clientNumb) {
     std::cout << GREEN << "Client arrival n°"<<clientNumb << RESET << std::endl;
@@ -23,7 +22,7 @@ double Queue::averageWaitingTime() {
 
 }
 
-bool Queue::isEmpty() {
+bool Queue::isEmpty() const {
     if (clientQueue.empty()) {
         return true;
     } else {
@@ -61,7 +60,7 @@ Client Queue::remove() {
 void Queue::setQueueSize() {
     queueSize.push_front(clientQueue.size());
 }
-int Queue::getQueueSize() {
+int Queue::getQueueSize() const {
     std::cout << "Size queue is : " << BOLDCYAN << clientQueue.size() << RESET << " clients." << std::endl;
     return clientQueue.size();
 }

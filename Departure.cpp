@@ -9,9 +9,7 @@
  */
 #include "Departure.h"
 
-Departure :: Departure(){
-
-}
+Departure :: Departure()= default;
 
 bool Departure ::traiter(){
 

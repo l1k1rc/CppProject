@@ -9,14 +9,15 @@
  * \version 1
  */
 #include <iostream>
+#include <utility>
 #include "Bank.h"
 using namespace std;
 
-Bank::Bank() {}
+Bank::Bank() = default;
 
 Bank::Bank(int cCount, Queue queueT) {
     cout << "Bank constructor used." << endl;
-    this->queue = queueT;
+    this->queue = std::move(queueT);
 }
 
 Cashier *Bank::getFreeCashier() {

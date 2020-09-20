@@ -10,12 +10,12 @@
 #include "Arrival.h"
 
 Arrival :: Arrival(){
-    poisson.init();
+    Poisson::init();
 
 }
 
 // Client arrival then u have to know if
 bool Arrival ::traiter(){
-    return poisson.next() > 1;
+    return Poisson::next() > 1;
 }
 

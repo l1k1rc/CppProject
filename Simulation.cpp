@@ -11,7 +11,7 @@
 #include "Color.h"
 #include <time.h>
 
-Simulation::Simulation() {}
+Simulation::Simulation() = default;
 
 Simulation::Simulation(int simulationT, int cashierT) {
     this->simulationTime = simulationT;
@@ -27,8 +27,10 @@ void Simulation::simulate() {
         std::cout << BOLDBLUE << "################ Service time n°" << actualTime << " ################" << RESET
                   << std::endl;
         if (arrival.traiter()) {
-            clientNumb++;
-            bank.getQueue()->add(Client(actualTime), clientNumb);
+            for(int i = 0; i < (rand() % 3) + 1; i++){
+                clientNumb++;
+                bank.getQueue()->add(Client(actualTime), clientNumb);
+            }
         }
         if (!bank.getQueue()->isEmpty() && bank.isACashierFree()) {
             bank.getFreeCashier()->servir(bank.getQueue()->remove(), p.next(10)); //p.next(5)
@@ -41,6 +43,7 @@ void Simulation::simulate() {
     }
 
     finalize(simulationTime);
+    std::cout << BOLDBLUE << "Expected simulation time : " << simulationTime << std::endl;
     statistic();
 }
 
@@ -68,8 +71,7 @@ void Simulation::finalize(int simTime) {
         updateServices();
         bank.getQueue()->getQueueSize();
     }
-
-
+    std::cout << BOLDBLUE << "Final simulation time : " << simTime-- << RESET << std::endl;
 }
 
 void Simulation::statistic() {

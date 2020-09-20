@@ -98,7 +98,7 @@ public :
      */
     bool allFree();
 public:
-    static const int DIM = 5;
+    static const int DIM = 3;
     Cashier cashiers[DIM];
     Queue queue;
 };

@@ -10,13 +10,16 @@
  */
 
 #include "Client.h"
-Client::Client() {}
+Client::Client() = default;
 
 Client::Client(int arrivalTime) {
     this->arrivalT = arrivalTime;
+    this->queueTime = 0;
 }
 
-double Client::getArrivaltime() {
+double Client::getArrivaltime() const {
     return arrivalT;
 }
-
+void Client::incrQueueTime() {
+    this->queueTime++;
+}

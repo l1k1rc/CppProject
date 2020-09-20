@@ -10,6 +10,7 @@
 
 #ifndef BANKPROJECT_CASHIER_H
 #define BANKPROJECT_CASHIER_H
+
 #include "Client.h"
 #include<list>
 
@@ -35,12 +36,14 @@ public :
      *  Constructeur de la classe Cashier
      */
     Cashier();
+
     /*!
      *  \brief temps de service avant libération
      *
      *  Methode qui permet de simuler le temps de service du caissier
      */
     void doService();
+
     /*!
      *  \brief Temps Moyen de service
      *
@@ -50,6 +53,7 @@ public :
      *  \return le temps moyen de service
      */
     double tempsMoyenService();
+
     /*!
      *  \brief Incrémentation du nombre de client servis par un caissier
      *
@@ -58,6 +62,7 @@ public :
      *  \return un entier du nombre de client servis
      */
     int nbClient();
+
     /*!
      *  \brief Taux d'occupation d'un caissier
      *
@@ -66,6 +71,7 @@ public :
      *  \return un double, le pourcentage d'occupation
      */
     double tauxOccupation();
+
     /*!
      *  \brief Caissier libre
      *
@@ -74,7 +80,8 @@ public :
      *  \return true si caissier libre,
      *  false sinon
      */
-    bool isFree();
+    bool isFree() const;
+
     /*!
      *  \brief Servir le client
      *
@@ -84,6 +91,7 @@ public :
      *  \param serviceT : le temps de service du client
      */
     void servir(Client, int serviceT);
+
     /*!
      *  \brief Libérer le caissier
      *
@@ -91,8 +99,9 @@ public :
      *  avoir servis un client
      */
     void liberer();
-    int id;
-    int serviceTime;
+
+    int serviceTime{};
 
 };
+
 #endif //BANKPROJECT_CASHIER_H

@@ -14,6 +14,6 @@
 class Departure : public Event {
 public :
     Departure();
-    bool traiter();
+    bool traiter() override;
 };
 #endif //BANKPROJECT_DepartureURE_H

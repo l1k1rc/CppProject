@@ -29,7 +29,7 @@ public :
      *
      *  \param arrivalTime : heure d'arrivée du client dans la banque
      */
-    Client(int arrivalTime);
+    explicit Client(int arrivalTime);
     /*!
      *  \brief Heure d'arrivée du client dans la banque
      *
@@ -37,10 +37,15 @@ public :
      *
      *  \return l'heure d'arrivée du client dans la banque
      */
-    double getArrivaltime();
+    [[nodiscard]] double getArrivaltime() const;
+    /*!
+     *  \brief Incrémente le temps d'attente dans la queue
+     */
+    void incrQueueTime();
 
+    int queueTime{};
 private:
-    double arrivalT; /*!< Heure d'arrivée du client dans la banque*/
+    double arrivalT{}; /*!< Heure d'arrivée du client dans la banque*/
 };
 
 #endif //BANKPROJECT_CLIENT_H

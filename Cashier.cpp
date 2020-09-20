@@ -43,7 +43,7 @@ double Cashier::tauxOccupation() {
     return count / taille;
 }
 
-bool Cashier::isFree() {
+bool Cashier::isFree() const {
     return dispo;
 }
 

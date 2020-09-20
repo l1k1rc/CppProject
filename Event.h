@@ -12,7 +12,7 @@
 class Event
 {
 protected :
-    Event(double time);
+    explicit Event(double time);
 
     double heure();
 
