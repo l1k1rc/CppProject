@@ -73,13 +73,19 @@ void Simulation::finalize(int simTime) {
 }
 
 void Simulation::statistic() {
+    int somme=0;
     std::cout << BOLDGREEN "##################### Statistics #####################" RESET << std::endl;
     for (int i = 0; i < bank.nbCashier(); i++) {
+        somme+=bank.getCashiersArray()[i].nbClient();
         std::cout << GREEN << "# Average service time for cashier n°" << i << " : "
                   << bank.getCashiersArray()[i].tempsMoyenService() << RESET << std::endl;
         std::cout << YELLOW << "# Occupation time of cashier n°" << i << " : "
                   << bank.getCashiersArray()[i].tauxOccupation() * 100 << "% busy." << RESET << std::endl;
+        std::cout << RED << "# Number of client served by cashier n°" << i << " : "
+                  << bank.getCashiersArray()[i].nbClient() << " clients served." << RESET << std::endl;
     }
+    std::cout << RED << "# Total of clients served in the bank : "
+              << somme << " clients served." << RESET << std::endl;
     std::cout << BOLDGREEN << "########################################################" << RESET << std::endl;
 }
 
