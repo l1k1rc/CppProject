@@ -58,7 +58,7 @@ void Simulation::updateServices() {
 }
 
 void Simulation::finalize(int simTime) {
-    while (!bank.allFree() && bank.getQueue()->getQueueSize()>0) {
+    while (!bank.allFree()) {
         bank.getQueue()->setQueueSize();
         simTime++;
         std::cout << BOLDBLUE << "################ Bank closing : finalize servicing time n°" << simTime
