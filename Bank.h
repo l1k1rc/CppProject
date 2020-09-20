@@ -86,6 +86,16 @@ public :
      *  \return une liste de caissiers
      */
     Cashier *getCashiersArray();
+    /*!
+     *  \brief Connaître la disponibilité des caissiers
+     *
+     *  Cette méthode va nous permettre de savoir si tous les caissiers sont libres en même temps.
+     *  Nous utilisons cette méthode pour stopper la simulation lorsqu'il n'y a plus de client dans la queue
+     *  et que tous les caissiers ont fini leur service.
+     *
+     *  \return true si tous les caissiers sont libres
+     *  false si au moins un des caissiers n'est pas libre
+     */
     bool allFree();
 public:
     static const int DIM = 3;

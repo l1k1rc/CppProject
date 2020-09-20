@@ -10,7 +10,6 @@
  */
 
 #include "Client.h"
-#include <iostream>
 Client::Client() {}
 
 Client::Client(int arrivalTime) {

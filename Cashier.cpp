@@ -52,7 +52,7 @@ void Cashier::servir(Client c, int serviceT) {
     ListDisp.push_front(dispo);
     ListTime.push_front(serviceT);
     NbClient++;
-    std::cout << "Service du client avec un temps de service de : " << serviceT
+    std::cout << "Client servicing with a time of : " << serviceT
               << " tours.\n";
     this->serviceTime = serviceT;
 }

@@ -1,10 +1,13 @@
 //
 // Created by l1k1 on 11/09/2020.
 //
-
+/*!
+ * \file Arrival.cpp
+ * \brief Classe Arrival
+ * \author SAINT-AMAND Matthieu, DUCROUX Guillaume
+ * \version 1
+ */
 #include "Arrival.h"
-#include "Client.h"
-#include "Queue.h"
 
 Arrival :: Arrival(){
     poisson.init();
