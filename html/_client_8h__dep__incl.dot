@@ -1,0 +1,27 @@
+digraph "Client.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Client.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Classe Client."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Cashier.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_cashier_8h.html",tooltip="Classe Cashier."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Bank.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_bank_8h.html",tooltip="Classe Bank."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Bank.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_bank_8cpp.html",tooltip="Classe Bank."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Simulation.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_simulation_8h.html",tooltip="Classe Simulation."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Simulation.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_simulation_8cpp.html",tooltip="Classe Simulation."];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Cashier.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_cashier_8cpp.html",tooltip="Classe Cashier."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Queue.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_queue_8h.html",tooltip="Classe Queue."];
+  Node8 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Queue.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_queue_8cpp.html",tooltip="Classe Queue."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Client.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_client_8cpp.html",tooltip="Classe Client."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

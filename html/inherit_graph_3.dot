@@ -1,0 +1,12 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Event",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_event.html",tooltip="classe representant un évènement de la simulation comme l'arrivée et le départ d'un client dans la ba..."];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="Arrival",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arrival.html",tooltip="classe representant l'évènement d'arriver du client La classe permet de gérer l'arriver du client dan..."];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Departure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_departure.html",tooltip="classe representant l'évènement de départ d'un client de la banque'"];
+}
