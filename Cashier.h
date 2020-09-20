@@ -100,7 +100,7 @@ public :
      */
     void liberer();
 
-    int serviceTime{};
+    int serviceTime;
 
 };
 
