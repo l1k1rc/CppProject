@@ -58,6 +58,13 @@ public :
      *  \return un entier du nombre de client servis
      */
     int nbClient();
+    /*!
+     *  \brief Taux d'occupation d'un caissier
+     *
+     *  Methode qui permet de connaître le pourcentage d'occupation de chacun des caissiers à la fin de la simulation
+     *
+     *  \return un double, le pourcentage d'occupation
+     */
     double tauxOccupation();
     /*!
      *  \brief Caissier libre

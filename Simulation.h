@@ -1,7 +1,12 @@
 //
 // Created by l1k1 on 11/09/2020.
 //
-
+/*!
+ * \file Simulation.h
+ * \brief Classe Simulation
+ * \author SAINT-AMAND Matthieu, DUCROUX Guillaume
+ * \version 1
+ */
 #ifndef BANKPROJECT_SIMULATION_H
 #define BANKPROJECT_SIMULATION_H
 #include "Bank.h"

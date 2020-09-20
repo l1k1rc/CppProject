@@ -1,7 +1,12 @@
 //
 // Created by l1k1 on 11/09/2020.
 //
-
+/*!
+ * \file Queue.cpp
+ * \brief Classe Queue
+ * \author SAINT-AMAND Matthieu, DUCROUX Guillaume
+ * \version 1
+ */
 #include "Client.h"
 #include "Queue.h"
 #include "Color.h"

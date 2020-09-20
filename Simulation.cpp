@@ -1,6 +1,12 @@
 //
 // Created by l1k1 on 11/09/2020.
 //
+/*!
+ * \file Simulation.cpp
+ * \brief Classe Simulation
+ * \author SAINT-AMAND Matthieu, DUCROUX Guillaume
+ * \version 1
+ */
 #include "Simulation.h"
 #include "Color.h"
 #include <time.h>
