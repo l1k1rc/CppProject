@@ -11,6 +11,6 @@
 
 Departure :: Departure()= default;
 
-bool Departure ::traiter(){
+bool Departure ::treat(){
 
 }

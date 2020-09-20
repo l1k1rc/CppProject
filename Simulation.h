@@ -33,7 +33,6 @@ public :
      *  \param averageS: Le temps moyen de service d'un caissier pour un client
      */
     Simulation(int simulationT, int cashierT, int averageS);
-    double dureePrevue();
     /*!
      *  \brief Lancer la simulation
      *

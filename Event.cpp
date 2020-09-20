@@ -14,7 +14,7 @@ Event :: Event()= default;
 [[maybe_unused]] Event::Event(double time) {
 
 }
-[[maybe_unused]] bool Event :: traiter(){
+[[maybe_unused]] bool Event :: treat(){
 
 }
 

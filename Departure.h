@@ -23,6 +23,6 @@ public :
      *  Constructeur de la classe Departure
      */
     Departure();
-    bool traiter() override;
+    bool treat() override;
 };
 #endif //BANKPROJECT_DepartureURE_H

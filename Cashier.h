@@ -52,7 +52,7 @@ public :
      *
      *  \return le temps moyen de service
      */
-    double tempsMoyenService();
+    double averageTimeService();
 
     /*!
      *  \brief Incrémentation du nombre de client servis par un caissier

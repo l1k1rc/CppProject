@@ -98,7 +98,7 @@ public :
      */
     bool allFree();
 public:
-    static const int DIM = 3;
+    static const int DIM = 4;
     Cashier cashiers[DIM];/*!< Déclaration du nombre de caissier dans la banque*/
     Queue queue;/*!< Construction de la file d'attente*/
 };

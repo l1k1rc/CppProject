@@ -34,8 +34,8 @@ public :
      *  \return true si la valeur de la loi de poisson est > 1
      *  false sinon
      */
-    bool traiter();
+    bool treat();
 private:
-    Poisson poisson; /*!<Initialisation de la variable de poisson que nous utiliserons pour traiter l'arrivé du client */
+    Poisson poisson; /*!<Initialisation de la variable de poisson que nous utiliserons pour treat l'arrivé du client */
 };
 #endif //BANKPROJECT_ARRIVAL_H

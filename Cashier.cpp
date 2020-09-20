@@ -17,7 +17,7 @@ Cashier::Cashier() {
     srand((unsigned int) time(NULL));
 }
 
-double Cashier::tempsMoyenService() {
+double Cashier::averageTimeService() {
     double somme = 0;
     int taille = ListTime.size();
     for (std::list<int>::iterator it = ListTime.begin(); it != ListTime.end(); ++it) {

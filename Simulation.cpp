@@ -27,7 +27,7 @@ void Simulation::simulate() {
         bank.getQueue()->setQueueSize();
         std::cout << BOLDBLUE << "################ Service time n°" << actualTime << " ################" << RESET
                   << std::endl;
-        if (arrival.traiter()) {
+        if (arrival.treat()) {
             for(int i = 0; i < (rand() % 3) + 1; i++){
                 clientNumb++;
                 bank.getQueue()->add(Client(actualTime), clientNumb);
@@ -58,7 +58,7 @@ void Simulation::updateServices() {
 }
 
 void Simulation::finalize(int simTime) {
-    while (!bank.allFree()) {
+    while (!bank.allFree()) { // && !bank.getQueue()->isEmpty() this condition doesn't work with the other one...
         bank.getQueue()->setQueueSize();
         simTime++;
         std::cout << BOLDBLUE << "################ Bank closing : finalize servicing time n°" << simTime
@@ -82,7 +82,7 @@ void Simulation::statistic() {
     for (int i = 0; i < bank.nbCashier(); i++) {
         somme += bank.getCashiersArray()[i].nbClient();
         std::cout << GREEN << "# Average service time for cashier n°" << i << " : "
-                  << bank.getCashiersArray()[i].tempsMoyenService() << RESET << std::endl;
+                  << bank.getCashiersArray()[i].averageTimeService() << RESET << std::endl;
         std::cout << YELLOW << "# Occupation time of cashier n°" << i << " : "
                   << bank.getCashiersArray()[i].tauxOccupation() * 100 << "% busy." << RESET << std::endl;
         std::cout << RED << "# Number of client served by cashier n°" << i << " : "
@@ -95,5 +95,4 @@ void Simulation::statistic() {
               << somme << " clients served." << RESET << std::endl;
     std::cout << BOLDGREEN << "######################################################" << RESET << std::endl;
 }
-double Simulation::dureePrevue() {}
 

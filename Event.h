@@ -34,12 +34,12 @@ public:
      *  \brief Traitement d'un évènement de la simulation
      *
      *  La méthode diffère en fonction de l'évènement.
-     *  Pour un départ d'un client voir la méthode traiter de Departure
-     *  Pour une arrivée d'un client dans la banque voir la méthode traiter de Arrival
+     *  Pour un départ d'un client voir la méthode treat de Departure
+     *  Pour une arrivée d'un client dans la banque voir la méthode treat de Arrival
      *
      *  \return un booléen en fonction de la sous classe Arrival ou Departure
      *
      */
-    virtual bool traiter();
+    virtual bool treat();
 };
 #endif //BANKPROJECT_EVENT_H

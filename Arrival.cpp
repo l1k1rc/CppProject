@@ -15,7 +15,7 @@ Arrival :: Arrival(){
 }
 
 // Client arrival then u have to know if
-bool Arrival ::traiter(){
+bool Arrival ::treat(){
     return Poisson::next() > 1;
 }
 
