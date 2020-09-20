@@ -64,7 +64,7 @@ void Simulation::finalize(int simTime) {
         std::cout << BOLDBLUE << "################ Bank closing : finalize servicing time n°" << simTime
                   << " ################" << RESET << std::endl;
         if (!bank.getQueue()->isEmpty() && bank.isACashierFree()) {
-            bank.getFreeCashier()->servir(bank.getQueue()->remove(), p.next(10)); //p.next(5)
+            bank.getFreeCashier()->servir(bank.getQueue()->remove(), p.next(averageService)); //p.next(5)
             std::cout << "Treatment of the client. " << std::endl;
         }
         if (!bank.isACashierFree())
