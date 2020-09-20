@@ -19,7 +19,6 @@ public :
     Simulation();
     Simulation(int simulationT, int cashierT);
     double dureePrevue();
-    double averageTimeService();
     void simulate();
     void updateServices();
     void finalize(int simTime);

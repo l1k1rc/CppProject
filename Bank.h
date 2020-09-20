@@ -98,8 +98,8 @@ public :
      */
     bool allFree();
 public:
-    static const int DIM = 3;
-    Cashier cashiers[DIM] = {Cashier(),Cashier(), Cashier()};
+    static const int DIM = 5;
+    Cashier cashiers[DIM];
     Queue queue;
 };
 #endif //BANKPROJECT_BANK_H

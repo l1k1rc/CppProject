@@ -23,6 +23,7 @@ Simulation::Simulation(int simulationT, int cashierT) {
 void Simulation::simulate() {
     int clientNumb = 0;
     for (int actualTime = 0; actualTime <= simulationTime; actualTime++) {
+        bank.getQueue()->setQueueSize();
         std::cout << BOLDBLUE << "################ Service time n°" << actualTime << " ################" << RESET
                   << std::endl;
         if (arrival.traiter()) {
@@ -54,6 +55,7 @@ void Simulation::updateServices() {
 
 void Simulation::finalize(int simTime) {
     while (!bank.allFree()) {
+        bank.getQueue()->setQueueSize();
         simTime++;
         std::cout << BOLDBLUE << "################ Bank closing : finalize servicing time n°" << simTime
                   << " ################" << RESET << std::endl;
@@ -71,10 +73,10 @@ void Simulation::finalize(int simTime) {
 }
 
 void Simulation::statistic() {
-    int somme=0;
+    int somme = 0;
     std::cout << BOLDGREEN "##################### Statistics #####################" RESET << std::endl;
     for (int i = 0; i < bank.nbCashier(); i++) {
-        somme+=bank.getCashiersArray()[i].nbClient();
+        somme += bank.getCashiersArray()[i].nbClient();
         std::cout << GREEN << "# Average service time for cashier n°" << i << " : "
                   << bank.getCashiersArray()[i].tempsMoyenService() << RESET << std::endl;
         std::cout << YELLOW << "# Occupation time of cashier n°" << i << " : "
@@ -82,14 +84,12 @@ void Simulation::statistic() {
         std::cout << RED << "# Number of client served by cashier n°" << i << " : "
                   << bank.getCashiersArray()[i].nbClient() << " clients served." << RESET << std::endl;
     }
-    std::cout << RED << "# Total of clients served in the bank : "
+    std::cout << BOLDYELLOW << "# Average length of queue : " << bank.getQueue()->longAVER() << RESET << std::endl;
+    std::cout << BOLDYELLOW << "# Long max of the queue in the simulation : " << bank.getQueue()->longMAX() << RESET
+              << std::endl;
+    std::cout << BOLDRED << "# Total of clients served in the bank : "
               << somme << " clients served." << RESET << std::endl;
-    std::cout << BOLDGREEN << "########################################################" << RESET << std::endl;
+    std::cout << BOLDGREEN << "######################################################" << RESET << std::endl;
 }
-
-double Simulation::averageTimeService() {
-
-}
-
 double Simulation::dureePrevue() {}
 
