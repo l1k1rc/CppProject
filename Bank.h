@@ -99,7 +99,7 @@ public :
     bool allFree();
 public:
     static const int DIM = 3;
-    Cashier cashiers[DIM];
-    Queue queue;
+    Cashier cashiers[DIM];/*!< Déclaration du nombre de caissier dans la banque*/
+    Queue queue;/*!< Construction de la file d'attente*/
 };
 #endif //BANKPROJECT_BANK_H

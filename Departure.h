@@ -10,9 +10,18 @@
 #ifndef BANKPROJECT_DepartureURE_H
 #define BANKPROJECT_DepartureURE_H
 #include "Event.h"
-
+/*! \class Departure
+   * \brief classe representant l'évènement de départ d'un client de la banque'
+   *
+   *
+   */
 class Departure : public Event {
 public :
+    /*!
+     *  \brief Constructeur
+     *
+     *  Constructeur de la classe Departure
+     */
     Departure();
     bool traiter() override;
 };
