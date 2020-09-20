@@ -19,12 +19,12 @@ int main(int argc, char **argv) {
                 nc = std::stoi(argv[i+1]);
                 if(nc<1)
                 {
-                    cout << "Entrée non valide : veuillez entrer un nombre de caissiers suppérieur à 0\n";
+                    cout << "Entry false : enter a number of cashier above 0\n";
                     return 1;
                 }
             }
             else {
-                cout << "Entrée non valide : veuillez renseigner le nombre de caissiers\n";
+                cout << "Entry false : enter a number of cashier \n";
                 return 1;
             }
         }
@@ -35,12 +35,12 @@ int main(int argc, char **argv) {
                 st = std::stoi(argv[i+1]);
                 if(st<1)
                 {
-                    cout << "Entrée non valide : veuillez entrer un temps de simulation suppérieur à 0\n";
+                    cout << "Entry false : enter a time simulation number above 0\n";
                     return 1;
                 }
             }
             else {
-                cout << "Entrée non valide : veuillez renseigner un temps de simulation valide\n";
+                cout << "Entry false : enter a valide time simulation\n";
                 return 1;
             }
         }
@@ -51,12 +51,12 @@ int main(int argc, char **argv) {
                 as = std::stoi(argv[i+1]);
                 if(as<1)
                 {
-                    cout << "Entrée non valide : veuillez entrer un temps de service moyen par caissier suppérieur à 0\n";
+                    cout << "Entry false : enter an average service time per cashier above 0\n";
                     return 1;
                 }
             }
             else {
-                cout << "Entrée non valide : veuillez renseigner un temps de service moyen par caissier valide\n";
+                cout << "Entry false : enter an average service time per cashier available\n";
                 return 1;
             }
         }
@@ -64,7 +64,7 @@ int main(int argc, char **argv) {
 
     if(nc==0 || st==0 || as==0)
     {
-        cout << "Entrée non valide : veuillez renseigner tous les paramètres requis\n";
+        cout << "Entry false : please enter all the parameters required (-nc : the number of cashiers, -st : the simulation time, -as : the average service time per cashier for one client\n";
         return 1;
     }
 
