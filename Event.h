@@ -12,9 +12,9 @@
 class Event
 {
 protected :
-    explicit Event(double time);
+    [[maybe_unused]] explicit Event(double time);
 
-    double heure();
+    [[maybe_unused]] double heure();
 
 public:
     Event();

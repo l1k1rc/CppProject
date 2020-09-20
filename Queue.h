@@ -18,11 +18,12 @@ public :
     Queue();
     int longMAX();
     double longAVER();
-    double averageWaitingTime();
+
+    [[maybe_unused]] double averageWaitingTime();
     void add(Client, int clientNumb);
-    bool isEmpty() const;
+    [[nodiscard]] bool isEmpty() const;
     Client remove();
-    int getQueueSize() const;
+    [[nodiscard]] int getQueueSize() const;
     void setQueueSize();
 public:
     std::list<int> queueSize;

@@ -18,7 +18,7 @@ void Queue::add(Client c, int clientNumb) {
     clientQueue.push_back(c);
 }
 
-double Queue::averageWaitingTime() {
+[[maybe_unused]] double Queue::averageWaitingTime() {
 
 }
 

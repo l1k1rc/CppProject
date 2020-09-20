@@ -11,12 +11,13 @@
 
 Event :: Event()= default;
 
-Event::Event(double time) {
+[[maybe_unused]] Event::Event(double time) {
 
 }
-bool Event :: traiter(){
+[[maybe_unused]] bool Event :: traiter(){
 
 }
-double Event :: heure(){
+
+[[maybe_unused]] double Event :: heure(){
 
 }
