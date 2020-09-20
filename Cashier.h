@@ -27,7 +27,7 @@ private:
     bool dispo = true; /*!< Variable pour savoir si le caissier est libre*/
     /*!< Temps de service du caissier pour un client*/
     std::list<int> ListTime; /*!< Liste des temps de service d'un caissier pour tout ses clients*/
-    std::list<int> ListDisp;
+    std::list<int> ListDisp;/*!< Liste des dispo d'un caissier pour calculer le temps d'occupation*/
 public :
     /*!
      *  \brief Constructeur
