@@ -1,6 +1,6 @@
 # CppProject
 ## Création d'une simulation d'une banque.
->> M2 IISC RS $\alpha$
+>> M2 IISC RS
 >
 > ```DUCROUX Guillaume```
 ```SAINT-AMAND Matthieu```
